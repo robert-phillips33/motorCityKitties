@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import mockData from '../assets/dummyData.json';
+import mockData from '../assets/mockData.json';
 import { filterByPosition } from "@/lib/utils";
 import { Button } from '@/components/ui/Button';
 import { Switch } from '@/components/ui/Switch';
@@ -24,59 +24,39 @@ const TeamViewMain = () => {
   console.log(filteredData);
   
   return (
-    <div>
-      <h1>Detroit Tigers Team Stats</h1>
-
-      {/* Switch to toggle between Pitcher and Position Player stats */}
-      <div>
-        <span>[pitch]</span>
-        <Switch
-          onCheckedChange={(checked) => setPitcherOrHitterView(checked ? 'PositionPlayer' : 'Pitcher')}
-        />
-        <span>[hit]</span>
-      </div>
-
-      {/* Table to display the filtered data */}
       <Table>
-        <TableCaption>
-          {pitcherOrHitterView === 'Pitcher'
-            ? 'List of Pitcher Stats'
-            : 'List of Position Player Stats'}
-        </TableCaption>
+        <TableCaption>DETROIT TIGERS ACTIVE ROSTER</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Position</TableHead>
-            <TableHead className="w-[100px]">{pitcherOrHitterView === 'Pitcher' ? 'ERA' : 'AVG'}</TableHead>
-            <TableHead>{pitcherOrHitterView === 'Pitcher' ? 'Strikeouts' : 'HR'}</TableHead>
-            <TableHead className="text-right">{pitcherOrHitterView === 'Pitcher' ? 'W/L' : 'RBIs'}</TableHead>
+            <TableHead className="w-[100px]">NAME</TableHead>
+            <TableHead>POSITION</TableHead>
+            <TableHead>ERA</TableHead>
+            <TableHead>K&apos;S</TableHead>
+            <TableHead>IP</TableHead>
+            <TableHead className="text-right">W/L</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filteredData.map((player) => (
-            <TableRow key={player.PlayerID}>
-              <TableCell className="font-medium">{player.Name}</TableCell>
-              <TableCell>{player.Position}</TableCell>
-              {pitcherOrHitterView === 'Pitcher' ? (
-                <>
-                  <TableCell>{player.EarnedRunAverage}</TableCell>
-                  <TableCell>{player.PitchingStrikeouts}</TableCell>
-                  <TableCell className="text-right">{player.Wins}/{player.Losses}</TableCell>
-                </>
-              ) : (
-                <>
-                  <TableCell>{player.BattingAverage}</TableCell>
-                  <TableCell>{player.HomeRuns}</TableCell>
-                  <TableCell className="text-right">{player.RunsBattedIn}</TableCell>
-                </>
-              )}
+          {filteredData.map((filteredData) => (
+            <TableRow key={filteredData.PlayerID}>
+              <TableCell className="font-medium text-left">{filteredData.Name}</TableCell>
+              <TableCell>{filteredData.Position}</TableCell>
+              <TableCell>{filteredData.EarnedRunAverage}</TableCell>
+              <TableCell>{filteredData.Wins}</TableCell>
+              <TableCell>{filteredData.InningsPitchedDecimal.toFixed(0)}</TableCell>
+              <TableCell>{filteredData.Wins}</TableCell>
             </TableRow>
           ))}
         </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={3}></TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
-    </div>
-  );
-};
+    );
+  };
+  
 export default TeamViewMain;
 
 
