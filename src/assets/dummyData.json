@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Tarik Skubal",
+    "position": "Pitcher",
+    "ERA": 2.08,
+    "Ks": 214,
+    "W/L": "16-4",
+    "IP": 180.0,
+    "HR": 19
+  },
+  {
+    "id": 2,
+    "name": "Casey Mize",
+    "position": "Pitcher",
+    "ERA": 3.52,
+    "Ks": 175,
+    "W/L": "12-8",
+    "IP": 165.1,
+    "HR": 21
+  },
+  {
+    "id": 3,
+    "name": "Spencer Turnbull",
+    "position": "Pitcher",
+    "ERA": 3.25,
+    "Ks": 150,
+    "W/L": "11-6",
+    "IP": 140.0,
+    "HR": 17
+  },
+  {
+    "id": 4,
+    "name": "Matt Manning",
+    "position": "Pitcher",
+    "ERA": 3.95,
+    "Ks": 132,
+    "W/L": "10-10",
+    "IP": 155.2,
+    "HR": 23
+  },
+  {
+    "id": 5,
+    "name": "Michael Fulmer",
+    "position": "Pitcher",
+    "ERA": 4.12,
+    "Ks": 125,
+    "W/L": "8-9",
+    "IP": 148.0,
+    "HR": 22
+  },
+  {
+    "id": 6,
+    "name": "Miguel Cabrera",
+    "position": "Hitter",
+    "avg": 0.305,
+    "HR": 22,
+    "RBIs": 85
+  },
+  {
+    "id": 7,
+    "name": "Javier Báez",
+    "position": "Hitter",
+    "avg": 0.268,
+    "HR": 27,
+    "RBIs": 90
+  },
+  {
+    "id": 8,
+    "name": "Robbie Grossman",
+    "position": "Hitter",
+    "avg": 0.242,
+    "HR": 18,
+    "RBIs": 60
+  },
+  {
+    "id": 9,
+    "name": "Jonathan Schoop",
+    "position": "Hitter",
+    "avg": 0.256,
+    "HR": 21,
+    "RBIs": 75
+  },
+  {
+    "id": 10,
+    "name": "Jeimer Candelario",
+    "position": "Hitter",
+    "avg": 0.270,
+    "HR": 19,
+    "RBIs": 72
+  }
+]
