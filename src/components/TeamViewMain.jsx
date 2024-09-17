@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import mockData from '../assets/dummyData.json';
+import mockData from '../assets/mockData.json';
 import { filterByPosition } from "@/lib/utils";
 import { Button } from '@/components/ui/Button';
 import { Switch } from '@/components/ui/Switch';
@@ -22,61 +22,58 @@ const TeamViewMain = () => {
 
   const filteredData = filterByPosition(mockData, pitcherOrHitterView);
   console.log(filteredData);
-  
+
   return (
-    <div>
-      <h1>Detroit Tigers Team Stats</h1>
-
-      {/* Switch to toggle between Pitcher and Position Player stats */}
-      <div>
-        <span>[pitch]</span>
-        <Switch
-          onCheckedChange={(checked) => setPitcherOrHitterView(checked ? 'PositionPlayer' : 'Pitcher')}
-        />
-        <span>[hit]</span>
-      </div>
-
-      {/* Table to display the filtered data */}
+    <>
+      <p className="mb-8 pl-8 italic text-right ml-5 font-sm">
+        &apos;As a baseball fan, I really needed an app that doesn&apos;t
+         <br></br> display a bunch of sh*tty stats
+        that literally nobody cares about.&apos; <br></br> 
+        - <span className='font-bold'>Baseball Fans</span>
+      </p>
+      <h1 className=" mb-5 scroll-m-20 text-2xl font-bold 
+    tracking-tight lg:text-3xl text-right">
+        motorCityKitties.
+      </h1>
       <Table>
-        <TableCaption>
-          {pitcherOrHitterView === 'Pitcher'
-            ? 'List of Pitcher Stats'
-            : 'List of Position Player Stats'}
-        </TableCaption>
+        <TableCaption>[DETROIT TIGERS ACTIVE ROSTER]</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Position</TableHead>
-            <TableHead className="w-[100px]">{pitcherOrHitterView === 'Pitcher' ? 'ERA' : 'AVG'}</TableHead>
-            <TableHead>{pitcherOrHitterView === 'Pitcher' ? 'Strikeouts' : 'HR'}</TableHead>
-            <TableHead className="text-right">{pitcherOrHitterView === 'Pitcher' ? 'W/L' : 'RBIs'}</TableHead>
+            <TableHead className="w-100px font-bold">NAME</TableHead>
+            <TableHead className='font-medium text-left'>POSITION</TableHead>
+            <TableHead className='font-medium text-left'>ERA</TableHead>
+            <TableHead className='font-medium text-left'>K&apos;S</TableHead>
+            <TableHead className='font-medium text-left'>IP</TableHead>
+            <TableHead className='font-medium text-left'>W/L</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filteredData.map((player) => (
-            <TableRow key={player.PlayerID}>
-              <TableCell className="font-medium">{player.Name}</TableCell>
-              <TableCell>{player.Position}</TableCell>
-              {pitcherOrHitterView === 'Pitcher' ? (
-                <>
-                  <TableCell>{player.EarnedRunAverage}</TableCell>
-                  <TableCell>{player.PitchingStrikeouts}</TableCell>
-                  <TableCell className="text-right">{player.Wins}/{player.Losses}</TableCell>
-                </>
-              ) : (
-                <>
-                  <TableCell>{player.BattingAverage}</TableCell>
-                  <TableCell>{player.HomeRuns}</TableCell>
-                  <TableCell className="text-right">{player.RunsBattedIn}</TableCell>
-                </>
-              )}
+          {filteredData.map((filteredData) => (
+            <TableRow key={filteredData.PlayerID}>
+              <TableCell className='font-medium text-left'>
+                {filteredData.Name}</TableCell>
+              <TableCell className='font-medium text-left'
+              >{filteredData.Position}</TableCell>
+              <TableCell className='font-medium text-left'>
+                {filteredData.EarnedRunAverage}</TableCell>
+              <TableCell className='font-medium text-left'
+              >{filteredData.Wins}</TableCell>
+              <TableCell className='font-medium text-left'>
+                {filteredData.InningsPitchedDecimal.toFixed(0)}</TableCell>
+              <TableCell>{filteredData.Wins}</TableCell>
             </TableRow>
           ))}
         </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell></TableCell>
+          </TableRow>
+        </TableFooter>
       </Table>
-    </div>
-  );
-};
+    </>
+  )
+}
+
 export default TeamViewMain;
 
 
