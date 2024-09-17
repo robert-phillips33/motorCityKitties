@@ -22,41 +22,58 @@ const TeamViewMain = () => {
 
   const filteredData = filterByPosition(mockData, pitcherOrHitterView);
   console.log(filteredData);
-  
+
   return (
+    <>
+      <p className="mb-8 pl-8 italic text-right ml-5 font-sm">
+        &apos;As a baseball fan, I really needed an app that doesn&apos;t
+         <br></br> display a bunch of sh*tty stats
+        that literally nobody cares about.&apos; <br></br> 
+        - <span className='font-bold'>Baseball Fans</span>
+      </p>
+      <h1 className=" mb-5 scroll-m-20 text-2xl font-bold 
+    tracking-tight lg:text-3xl text-right">
+        motorCityKitties.
+      </h1>
       <Table>
-        <TableCaption>DETROIT TIGERS ACTIVE ROSTER</TableCaption>
+        <TableCaption>[DETROIT TIGERS ACTIVE ROSTER]</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">NAME</TableHead>
-            <TableHead>POSITION</TableHead>
-            <TableHead>ERA</TableHead>
-            <TableHead>K&apos;S</TableHead>
-            <TableHead>IP</TableHead>
-            <TableHead className="text-right">W/L</TableHead>
+            <TableHead className="w-100px font-bold">NAME</TableHead>
+            <TableHead className='font-medium text-left'>POSITION</TableHead>
+            <TableHead className='font-medium text-left'>ERA</TableHead>
+            <TableHead className='font-medium text-left'>K&apos;S</TableHead>
+            <TableHead className='font-medium text-left'>IP</TableHead>
+            <TableHead className='font-medium text-left'>W/L</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {filteredData.map((filteredData) => (
             <TableRow key={filteredData.PlayerID}>
-              <TableCell className="font-medium text-left">{filteredData.Name}</TableCell>
-              <TableCell>{filteredData.Position}</TableCell>
-              <TableCell>{filteredData.EarnedRunAverage}</TableCell>
-              <TableCell>{filteredData.Wins}</TableCell>
-              <TableCell>{filteredData.InningsPitchedDecimal.toFixed(0)}</TableCell>
+              <TableCell className='font-medium text-left'>
+                {filteredData.Name}</TableCell>
+              <TableCell className='font-medium text-left'
+              >{filteredData.Position}</TableCell>
+              <TableCell className='font-medium text-left'>
+                {filteredData.EarnedRunAverage}</TableCell>
+              <TableCell className='font-medium text-left'
+              >{filteredData.Wins}</TableCell>
+              <TableCell className='font-medium text-left'>
+                {filteredData.InningsPitchedDecimal.toFixed(0)}</TableCell>
               <TableCell>{filteredData.Wins}</TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}></TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableFooter>
       </Table>
-    );
-  };
-  
+    </>
+  )
+}
+
 export default TeamViewMain;
 
 
