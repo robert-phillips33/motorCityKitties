@@ -7,7 +7,7 @@ export function cn(...inputs) {
 
 export const filterByPosition = (data, view) => {
   return data.filter((player) => {
-    if (view === 'Pitcher') {
+    if (view === 'P') {
       return player.PositionCategory === 'P';
     } else {
       return player.PositionCategory !== 'P';
