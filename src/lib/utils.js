@@ -14,3 +14,23 @@ export const filterByPosition = (data, view) => {
     }
   });
 };
+
+export const sortStatsHighToLow = (data, stat) => {
+  return data.sort((a, b) => {
+    if (a[stat] < b[stat]) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+};
+
+export const sortStatsLowToHigh = (data, stat) => {
+  return data.sort((a, b) => {
+    if (a[stat] > b[stat]) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+};

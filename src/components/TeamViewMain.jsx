@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import mockData from '../assets/mockData.json';
-import { filterByPosition } from "@/lib/utils";
-import { Button } from '@/components/ui/Button';
-import { Switch } from '@/components/ui/Switch';
+import {
+  filterByPosition,
+  sortStatsHighToLow,
+  sortStatsLowToHigh,
+} from "@/lib/utils";
 import {
   Table,
   TableHeader,
