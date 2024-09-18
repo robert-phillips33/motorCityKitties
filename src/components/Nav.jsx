@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { Switch } from '@/components/ui/Switch';
@@ -13,7 +12,7 @@ const Nav = ({ pitcherOrHitterView, setPitcherOrHitterView }) => {
         SCHEDULE
       </Button>
       <Button onClick={() => navigate('/')}>
-        STATS
+        stats
       </Button>
 
       <div className="flex items-center">

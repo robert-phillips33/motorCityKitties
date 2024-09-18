@@ -5,32 +5,23 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-export const filterByPosition = (data, view) => {
-  return data.filter((player) => {
-    if (view === 'P') {
-      return player.PositionCategory === 'P';
-    } else {
-      return player.PositionCategory !== 'P';
-    }
+export const filterAndSortData = (data, pitcherOrHitterView, field, isAscending) => {
+  // Step 1: Filter data based on pitcher or hitter view
+  const filteredData = data.filter((player) => {
+    return pitcherOrHitterView === 'P' ? player.PositionCategory === 'P' : player.PositionCategory !== 'P';
   });
+
+  // Step 2: Sort the data if a field is provided
+  if (field) {
+    filteredData.sort((a, b) => {
+      if (isAscending) {
+        return a[field] > b[field] ? 1 : -1;
+      } else {
+        return a[field] < b[field] ? 1 : -1;
+      }
+    });
+  }
+
+  return filteredData;
 };
 
-export const sortStatsHighToLow = (data, stat) => {
-  return data.sort((a, b) => {
-    if (a[stat] < b[stat]) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-};
-
-export const sortStatsLowToHigh = (data, stat) => {
-  return data.sort((a, b) => {
-    if (a[stat] > b[stat]) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
-};

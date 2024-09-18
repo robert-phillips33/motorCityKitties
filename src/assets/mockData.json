@@ -1,22 +1,5 @@
 [
   {
-    "StatID": 6599193,
-    "TeamID": 17,
-    "PlayerID": 1000001,
-    "SeasonType": 1,
-    "Season": 2024,
-    "Name": "Tarik Skubal",
-    "Team": "DET",
-    "Position": "SP",
-    "PositionCategory": "P",
-    "EarnedRunAverage": 2.08,
-    "PitchingStrikeouts": 214,
-    "Wins": 16,
-    "Losses": 4,
-    "InningsPitchedDecimal": 180.0,
-    "PitchingHomeRuns": 19
-  },
-  {
     "StatID": 6599194,
     "TeamID": 17,
     "PlayerID": 1000002,
@@ -173,5 +156,22 @@
     "Hits": 100,
     "Doubles": 20,
     "Triples": 1
+  },
+  {
+    "StatID": 6599193,
+    "TeamID": 17,
+    "PlayerID": 1000001,
+    "SeasonType": 1,
+    "Season": 2024,
+    "Name": "Tarik Skubal",
+    "Team": "DET",
+    "Position": "SP",
+    "PositionCategory": "P",
+    "EarnedRunAverage": 2.08,
+    "PitchingStrikeouts": 214,
+    "Wins": 16,
+    "Losses": 4,
+    "InningsPitchedDecimal": 180.0,
+    "PitchingHomeRuns": 19
   }
 ]
