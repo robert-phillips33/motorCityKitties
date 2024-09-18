@@ -8,17 +8,13 @@ const Nav = ({ pitcherOrHitterView, setPitcherOrHitterView }) => {
 
   return (
     <nav className='flex items-center justify between'>
-      <Button onClick={() => navigate('/schedule')}>
-        SCHEDULE
-      </Button>
-      <Button onClick={() => navigate('/')}>
-        stats
-      </Button>
+      <Button onClick={() => navigate('/schedule')}>SCHEDULE</Button>
+      <Button onClick={() => navigate('/')}>STATS</Button>
 
       <div className="flex items-center">
         <span>pitch</span>
         <Switch
-          onCheckedChange={(checked) => setPitcherOrHitterView(checked ? 'P' : '')} 
+          onCheckedChange={(checked) => setPitcherOrHitterView(checked ? 'P' : 'H')}
           checked={pitcherOrHitterView === 'P'}
         />
         <span>bat</span>

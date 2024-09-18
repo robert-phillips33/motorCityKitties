@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PropTypes from 'prop-types';
 import mockData from '../assets/mockData.json';
-import {
-  filterAndSortData,  // Consolidated utility function
-} from "@/lib/utils";
+import { filterData, sortData } from "@/lib/utils";
 import {
   Table,
   TableHeader,
   TableBody,
-  TableFooter,
   TableHead,
   TableRow,
   TableCell,
@@ -16,15 +13,12 @@ import {
 } from '@/components/ui/table';
 
 const TeamViewMain = ({ pitcherOrHitterView }) => {
-  const [data, setData] = useState(mockData);
   const [sortedHighToLow, setSortedHighToLow] = useState(false);
   const [sortField, setSortField] = useState(null);
 
-  // Effect to re-filter data whenever pitcherOrHitterView or sortField changes
-  useEffect(() => {
-    const filteredSortedData = filterAndSortData(mockData, pitcherOrHitterView, sortField, sortedHighToLow);
-    setData(filteredSortedData);
-  }, [pitcherOrHitterView, sortField, sortedHighToLow]);
+  const filteredData = filterData(mockData, pitcherOrHitterView); 
+
+  const sortedData = sortField ? sortData(filteredData, sortField, sortedHighToLow) : filteredData; 
 
   const handleSort = (field) => {
     setSortedHighToLow(!sortedHighToLow);
@@ -33,85 +27,48 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
 
   return (
     <>
-      <p className="mb-8 pl-8 italic text-right ml-5 font-sm">
-        &apos;As a baseball fan, I really needed an app that doesn&apos;t
-        <br></br> display a bunch of sh*tty stats
-        that literally nobody cares about.&apos; <br></br>
-        - <span className='font-bold'>Baseball Fans</span>
-      </p>
-      <h1 className=" mb-5 scroll-m-20 text-2xl font-bold 
-    tracking-tight lg:text-3xl text-right">
-        motorCityKitties.
-      </h1>
+      <h1 className="text-2xl font-bold text-right">motorCityKitties.</h1>
       <Table>
         <TableCaption>[ DETROIT TIGERS 2024 ACTIVE ROSTER ]</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className='w-100px font-bold'>
-              NAME
-            </TableHead>
-            <TableHead className='font-medium text-left'>
-              POSITION
-            </TableHead>
+            <TableHead className="font-bold">NAME</TableHead>
+            <TableHead>POSITION</TableHead>
             {pitcherOrHitterView === 'P' ? (
               <>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('EarnedRunAverage')}>
-                  ERA⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('PitchingStrikeouts')}>
-                  K&apos;S⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('InningsPitchedDecimal')}>
-                  IP⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('Wins')}>
-                  W/L⇅
-                </TableHead>
+                <TableHead onClick={() => handleSort('EarnedRunAverage')}>ERA⇅</TableHead>
+                <TableHead onClick={() => handleSort('PitchingStrikeouts')}>K&apos;s⇅</TableHead>
+                <TableHead onClick={() => handleSort('InningsPitchedDecimal')}>IP⇅</TableHead>
+                <TableHead onClick={() => handleSort('Wins')}>W/L⇅</TableHead>
               </>
             ) : (
               <>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('BattingAverage')}>
-                  AVG⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('HomeRuns')}>
-                  HR⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('RunsBattedIn')}>
-                  RBI⇅
-                </TableHead>
-                <TableHead className='font-medium text-left cursor-pointer 
-                transition-colors hover:bg-muted/50' onClick={() => handleSort('Hits')}>
-                  HITS⇅
-                </TableHead>
+                <TableHead onClick={() => handleSort('BattingAverage')}>AVG⇅</TableHead>
+                <TableHead onClick={() => handleSort('HomeRuns')}>HR⇅</TableHead>
+                <TableHead onClick={() => handleSort('RunsBattedIn')}>RBI⇅</TableHead>
+                <TableHead onClick={() => handleSort('Hits')}>Hits⇅</TableHead>
               </>
             )}
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((player) => (
+          {sortedData.map((player) => (
             <TableRow key={player.PlayerID}>
-              <TableCell className='font-medium text-left'>{player.Name}</TableCell>
-              <TableCell className='font-medium text-left'>{player.Position}</TableCell>
+              <TableCell className='font-bold text-left'>{player.Name}</TableCell>
+              <TableCell>{player.Position}</TableCell>
               {pitcherOrHitterView === 'P' ? (
                 <>
-                  <TableCell className='font-medium text-left'>{player.EarnedRunAverage}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.PitchingStrikeouts}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.InningsPitchedDecimal}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.Wins}/{player.Losses}</TableCell>
+                  <TableCell>{player.EarnedRunAverage}</TableCell>
+                  <TableCell>{player.PitchingStrikeouts}</TableCell>
+                  <TableCell>{player.InningsPitchedDecimal}</TableCell>
+                  <TableCell>{player.Wins}/{player.Losses}</TableCell>
                 </>
               ) : (
                 <>
-                  <TableCell className='font-medium text-left'>{player.BattingAverage}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.HomeRuns}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.RunsBattedIn}</TableCell>
-                  <TableCell className='font-medium text-left'>{player.Hits}</TableCell>
+                  <TableCell>{player.BattingAverage}</TableCell>
+                  <TableCell>{player.HomeRuns}</TableCell>
+                  <TableCell>{player.RunsBattedIn}</TableCell>
+                  <TableCell>{player.Hits}</TableCell>
                 </>
               )}
             </TableRow>
