@@ -17,7 +17,6 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
   const [sortField, setSortField] = useState(null);
 
   const filteredData = filterData(mockData, pitcherOrHitterView); 
-
   const sortedData = sortField ? sortData(filteredData, sortField, sortedHighToLow) : filteredData; 
 
   const handleSort = (field) => {
@@ -36,17 +35,25 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
             <TableHead>POSITION</TableHead>
             {pitcherOrHitterView === 'P' ? (
               <>
-                <TableHead onClick={() => handleSort('EarnedRunAverage')}>ERA⇅</TableHead>
-                <TableHead onClick={() => handleSort('PitchingStrikeouts')}>K&apos;s⇅</TableHead>
-                <TableHead onClick={() => handleSort('InningsPitchedDecimal')}>IP⇅</TableHead>
-                <TableHead onClick={() => handleSort('Wins')}>W/L⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('EarnedRunAverage')}>ERA⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('PitchingStrikeouts')}>K&apos;s⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('InningsPitchedDecimal')}>IP⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('Wins')}>W/L⇅</TableHead>
               </>
             ) : (
               <>
-                <TableHead onClick={() => handleSort('BattingAverage')}>AVG⇅</TableHead>
-                <TableHead onClick={() => handleSort('HomeRuns')}>HR⇅</TableHead>
-                <TableHead onClick={() => handleSort('RunsBattedIn')}>RBI⇅</TableHead>
-                <TableHead onClick={() => handleSort('Hits')}>Hits⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('BattingAverage')}>AVG⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('HomeRuns')}>HR⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('RunsBattedIn')}>RBI⇅</TableHead>
+                <TableHead className='font-bold cursor-pointer' 
+                onClick={() => handleSort('Hits')}>Hits⇅</TableHead>
               </>
             )}
           </TableRow>
