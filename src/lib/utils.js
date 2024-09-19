@@ -3,14 +3,21 @@ import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
-}
+};
 
-export const filterByPosition = (data, view) => {
+export const filterData = (data, pitcherOrHitterView) => {
   return data.filter((player) => {
-    if (view === 'P') {
-      return player.PositionCategory === 'P';
+    return pitcherOrHitterView === 'P' ? player.PositionCategory === 'P' : player.PositionCategory !== 'P';
+  });
+};
+
+export const sortData = (data, field, isAscending) => {
+  return data.sort((a, b) => {
+    if (isAscending) {
+      return a[field] > b[field] ? 1 : -1;
     } else {
-      return player.PositionCategory !== 'P';
+      return a[field] < b[field] ? 1 : -1;
     }
   });
 };
+
