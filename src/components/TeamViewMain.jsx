@@ -23,10 +23,10 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
     setSortedHighToLow(!sortedHighToLow);
     setSortField(field);
   };
-
+console.log(sortedData);
   return (
     <>
-      {/* <h1 className="text-2xl font-bold text-right">motorCityKitties.</h1> */}
+    
       <Table className='shadow-lg'>
         <TableCaption>[ DETROIT TIGERS 2024 ACTIVE ROSTER ]</TableCaption>
         <TableHeader>
