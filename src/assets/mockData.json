@@ -173,5 +173,48 @@
     "Losses": 4,
     "InningsPitchedDecimal": 180.0,
     "PitchingHomeRuns": 19
+  },
+  {
+    "PlayerID": 10011857,
+    "Name": "Ricky Vanasco",
+    "Position": "RP",
+    "PositionCategory": "P",
+    "InningsPitchedDecimal": 3.7,
+    "Wins": 0.9,
+    "Losses": 0,
+    "EarnedRunAverage": 6.3,
+    "PitchingStrikeouts": 0.9
+  },
+  {
+    "PlayerID": 10012619,
+    "Name": "Trey Sweeney",
+    "Position": "SS",
+    "PositionCategory": "IF",
+    "BattingAverage": 0.2,
+    "HomeRuns": 3.7,
+    "RunsBattedIn": 11.6,
+    "Hits": 14.4
+  },
+  {
+    "PlayerID": 10012832,
+    "Name": "Brant Hurter",
+    "Position": "SP",
+    "PositionCategory": "P",
+    "InningsPitchedDecimal": 37.2,
+    "Wins": 4.6,
+    "Losses": 0.9,
+    "EarnedRunAverage": 2.4,
+    "PitchingStrikeouts": 35.6
+  },
+  {
+    "PlayerID": 10012957,
+    "Name": "Sean Guenther",
+    "Position": "RP",
+    "PositionCategory": "P",
+    "InningsPitchedDecimal": 10.6,
+    "Wins": 0.9,
+    "Losses": 0,
+    "EarnedRunAverage": 0.8,
+    "PitchingStrikeouts": 5.6
   }
 ]
