@@ -1,18 +1,16 @@
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/Button';
 import { Switch } from '@/components/ui/Switch';
 import PropTypes from 'prop-types';
 
 const Nav = ({ pitcherOrHitterView, setPitcherOrHitterView }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+
 
   return (
-    <nav className='flex justify-between items-center p-4'>
-      <div className="flex flex-col items-start">
-        <div className="flex items-center space-x-1">
+    <nav className='items-center mt-10 mb-3'>
+      <div className="flex flex-col items-center">
+        <div className="flex items-center mr-2.5 space-x-1">
           <span className={`font-bold italic 
-            ${pitcherOrHitterView === 'H' ? 'line-through decoration-2' : ''}`}>
+            ${pitcherOrHitterView === 'H' ? 
+            'line-through decoration-2' : ''}`}>
             pitch
           </span>
           <Switch
@@ -21,22 +19,18 @@ const Nav = ({ pitcherOrHitterView, setPitcherOrHitterView }) => {
             checked={pitcherOrHitterView === 'P'}
           />
           <span className={`font-bold italic 
-            ${pitcherOrHitterView === 'P' ? 'line-through decoration-2' : ''}`}>
+            ${pitcherOrHitterView === 'P' ? 
+            'line-through decoration-2' : ''}`}>
             bat
           </span>
         </div>
-        <h1 className="text-2xl font-bold">motorCityKitties.</h1>
+        <h1 className="text-3xl tracking-tighter 
+        font-bold">[motorCityKitties]</h1>
       </div>
-
-      {location.pathname !== '/wildcard' && (
-        <Button className='font-bold w-13 h-6' 
-        onClick={() => navigate('/wildcard')}>
-          wildcard
-        </Button>
-      )}
     </nav>
   );
 };
+
 
 Nav.propTypes = {
   pitcherOrHitterView: PropTypes.string.isRequired,

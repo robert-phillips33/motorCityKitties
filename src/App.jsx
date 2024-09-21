@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation to track the current route
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import TeamViewMain from './components/TeamViewMain';
-import WildCard from './components/WildCard';
+import Home from './components/Home';
 import Nav from './components/Nav';
 
 function App() {
@@ -11,12 +11,14 @@ function App() {
 
   return (
     <div>
-      {location.pathname === '/' && (
-        <Nav pitcherOrHitterView={pitcherOrHitterView} setPitcherOrHitterView={setPitcherOrHitterView} />
+      {location.pathname === '/TeamViewMain' && (
+        <Nav pitcherOrHitterView={pitcherOrHitterView}
+          setPitcherOrHitterView={setPitcherOrHitterView} />
       )}
       <Routes>
-        <Route path="/" element={<TeamViewMain pitcherOrHitterView={pitcherOrHitterView} />} />
-        <Route path="/wildcard" element={<WildCard />} />
+        <Route path='/' element={<Home />} />
+        <Route path="TeamViewMain" element={<TeamViewMain
+          pitcherOrHitterView={pitcherOrHitterView} />} />
       </Routes>
     </div>
   );
