@@ -27,7 +27,7 @@ const Home = () => {
             - Bill James 
           </h2>
         </CardContent>
-        <CardFooter className="flex flex-col items-center">
+        <CardFooter className="flex flex-col">
           <Button className='font-bold w-40 h-8'
             onClick={() => navigate('TeamViewMain')}>
             View Stats
