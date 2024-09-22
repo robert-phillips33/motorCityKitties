@@ -20,19 +20,19 @@ const Home = () => {
         </CardHeader>
         <CardContent>
           <h2 className='relative b-10 mt-3 rounded bg-muted italic px-[0.3rem]
-            py-[0.2rem] font-mono text-lg '>
+            py-[0.2rem] font-mono text-left text-lg '>
             &apos;You cannot measure <br></br>
             a ballplayer&apos;s heart<br></br>
             with a stat sheet.&apos;<br></br>
             - Bill James 
           </h2>
-          <h3 className='mt-8 text-2xl tracking-tighter font-bold'>.. we disagree ..</h3>
         </CardContent>
-        <CardFooter className="flex mt-0 justify-center">
+        <CardFooter className="flex flex-col items-center">
           <Button className='font-bold w-40 h-8'
             onClick={() => navigate('TeamViewMain')}>
             View Stats
           </Button>
+          <h3 className='text-xl tracking-tighter font-bold'>↑↑ we disagree.</h3>
         </CardFooter>
       </Card>
     </div>
