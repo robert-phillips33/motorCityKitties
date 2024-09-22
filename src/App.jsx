@@ -10,7 +10,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div>
+    <div className='mr-5'>
       {location.pathname === '/TeamViewMain' && (
         <Nav pitcherOrHitterView={pitcherOrHitterView}
           setPitcherOrHitterView={setPitcherOrHitterView} />

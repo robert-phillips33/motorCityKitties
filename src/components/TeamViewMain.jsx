@@ -92,7 +92,7 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
           <TableBody>
             {sortedData.map((player) => (
               <TableRow key={player.PlayerID}>
-                <TableCell className='font-bold text-left italic'>{player.Name}</TableCell>
+                <TableCell className='font-bold text-left'>{player.Name}</TableCell>
                 <TableCell>{player.Position}</TableCell>
                 {pitcherOrHitterView === 'P' ? (
                   <>
