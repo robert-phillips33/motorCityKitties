@@ -18,7 +18,7 @@ import {
 import {
   ScrollArea,
   ScrollBar
-} from '@/components/ui/scroll-area';
+} from '@/components/ui/Scroll-Area';
 
 const TeamViewMain = ({ pitcherOrHitterView }) => {
   const [data, setData] = useState([]);
