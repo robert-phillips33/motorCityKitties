@@ -4,7 +4,7 @@ describe('TeamViewMain', () => {
     cy.intercept('GET', 'https://api.sportsdata.io/v3/mlb/stats/json/PlayerSeasonStatsByTeam/2024/DET*',
       { fixture: 'teamData.json' }).as('getTeamData');
 
-    cy.visit('http://localhost:5173');
+    cy.visit('http://localhost:5173/TeamViewMain');
   });
 
   it('should correctly display pitcher stats on component mount', () => {
