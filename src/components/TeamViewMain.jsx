@@ -57,7 +57,7 @@ const TeamViewMain = ({ pitcherOrHitterView }) => {
 
   return (
     <>
-      <ScrollArea className="w-full h-[400px]"> 
+      <ScrollArea className="w-full h-[450px] sm-w[650px] "> 
         <Table className='shadow-lg'>
           <TableCaption>[ DETROIT TIGERS 2024 ACTIVE ROSTER ]</TableCaption>
           <TableHeader>

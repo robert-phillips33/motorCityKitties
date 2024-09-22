@@ -4,6 +4,19 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
   	extend: {
+      screens: {
+        'iphone-14-pro-max': '430px',
+        'galaxy-s23-ultra': '412px',
+        'pixel-7': '412px',
+        'oneplus-11': '412px',
+        'iphone-se-2022': '375px',
+        'sm': '600px',
+        'max-550': { 'max': '550px' },
+        'max-500': { 'max': '500px' },
+        'max-450': { 'max': '450px' },
+        'max-400': { 'max': '400px' },
+        'max-350': { 'max': '350px' },
+    },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
