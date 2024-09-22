@@ -29,7 +29,7 @@
 ^ PLACEHOLDER ^
 
 ### <div align="center">CONTEXT:</div>
-<div align="center">DANGOL'WEATHER was a group project written over the course of seven days during our third module and fifth month at Turing. We spent roughly 25 hours writing the application, requiring a bit longer than expected due to our exploration of new technologies (listed below!) within the project.</div>
+<div align="center">XXX</div>
 
 ### <div align="center">CONTRIBUTORS:</div>
 <div align="center">
