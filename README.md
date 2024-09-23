@@ -34,5 +34,5 @@
 
 
 ### <div align="center">LEARNING GOALS:</div>
-<div align="center">Moving forward with the application, my highest aim is to keep all components as modular as possible in order to further their reusability as I work towards futurue functionalities. The app, in its initial form, may seem to have a strangely built component structure, but these decisions were intentional in order to set myself up for success later on down the road. I'm hoping to really explore what it means to offer a "simple" user experience with this app, and I'm excited to see where it goes!v</div>
+<div align="center">Moving forward with the application, my highest aim is to keep all components as modular as possible in order to further their reusability as I work towards futurue functionalities. The app, in its initial form, may seem to have a strangely built component structure, but these decisions were intentional in order to set myself up for success later on down the road. I'm hoping to really explore what it means to offer a "simple" user experience with this app, and I'm excited to see where it goes!</div>
 
