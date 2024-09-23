@@ -34,7 +34,6 @@
 ### <div align="center">CONTRIBUTORS:</div>
 <div align="center">
   Solo app developed by <a href="https://github.com/robert-phillips33">me!</a>
-  <a href="https://github.com/robert-phillips33">Robert Phillips</a>
 </div>
 
 ### <div align="center">LEARNING GOALS:</div>
