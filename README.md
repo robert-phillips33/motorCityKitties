@@ -2,12 +2,6 @@
   <a href="https://motorcitykitties-ixzavke97-robert-phillips33s-projects.vercel.app/">motorCityKitties</a>
 </h1>
 
-<div align="center">
-  <strong>CHECK US OUT BY CLICKING THE ABOVE LINK!</strong>
-</div>
-
-<br></br>
-
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
@@ -17,14 +11,19 @@
   <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white" />
 </p>
 
-### <div align="center">ABSTRACT:</div>
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-<div align="center">MotorCityKitties was written by myself during my final week of Module 3 at Turing. As a massive Tigers baseball fan, I frequently find that most stat applications clog their viewers user experience by introducing any and all stats related to the position player or pitcher in question. By removing under-valued stats and building a purposefully minimal and simple UI, MotorCityKitties offers serious fans a much more streamlined way to view their favorite teams player stats without navigating an over-done UI.</div>
+<div align="center">
+  <strong>CHECK US OUT BY CLICKING THE ABOVE LINK!</strong>
+</div>
 
-### <div align="center">PREVIEW:</div>
+<br></br>
+
 <div align="center">
   <img src="https://i.imgur.com/fPs7Avi.png" alt="MotorCityKitties Application view" width="50%" />
 </div>
+
+### <div align="center">ABSTRACT:</div>
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+<div align="center">MotorCityKitties was written by myself during my final week of Module 3 at Turing. As a massive Tigers baseball fan, I frequently find that most stat applications clog their viewers user experience by introducing any and all stats related to the position player or pitcher in question. By removing under-valued stats and building a purposefully minimal and simple UI, MotorCityKitties offers serious fans a much more streamlined way to view their favorite teams player stats without navigating an over-done UI.</div>
 
 ### <div align="center">CONTEXT:</div>
 <div align="center">During this period in my development journey, I had been writing in React.js for 6 weeks. I was hoping to use this application in order to further my understanding of writing JavaScript in a React environment, all the while working to further understand the use of TailWind CSS styling on prebuilt UI components.</div>
