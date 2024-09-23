@@ -1,6 +1,12 @@
 <h1 align="center">
-  <a href="https://motorcitykitties-ixzavke97-robert-phillips33s-projects.vercel.app/">motorCityKittess</a>
+  <a href="https://motorcitykitties-ixzavke97-robert-phillips33s-projects.vercel.app/">motorCityKitties</a>
 </h1>
+
+<div align="center">
+  <strong>CHECK US OUT BY CLICKING THE ABOVE LINK!</strong>
+</div>
+
+<br></br>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
@@ -10,12 +16,6 @@
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" />
   <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white" />
 </p>
-
-
-
-<div align="center">
-  <strong>Check out the app by clicking "motorCityKitties" above!</strong>
-</div>
 
 ### <div align="center">ABSTRACT:</div>
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
